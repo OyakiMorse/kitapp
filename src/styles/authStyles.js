@@ -13,7 +13,7 @@ export const authStyles = StyleSheet.create({
   },
   text: {
     color: '#6692BA',
-    fontWeight: 600,
+    fontWeight: '600',
     fontSize: 16
   },
 });

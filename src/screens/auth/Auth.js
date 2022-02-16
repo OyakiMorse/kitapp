@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   StyleSheet,
   SafeAreaView,
@@ -6,9 +5,9 @@ import {
   Image,
   Text,
 } from 'react-native';
+import { authStyles } from '../../styles/authStyles';
 import Field from '../../components/Field';
 import IButton from '../../components/Button';
-import { authStyles } from '../../styles/authStyles';
 import logo from '../../../assets/logo.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUsername, setPassword } from '../../redux/actions/userAction';
@@ -24,14 +23,12 @@ export default function Auth() {
     const reqOptions = {
       method: 'POST',
       headers: {},
-      body: JSON.stringify({ username, password, bill}),
+      body: JSON.stringify({ username, password, bill }),
     };
-
-    console.log(reqOptions.body, store);
   }
 
   return (
-    <SafeAreaView style={(styles.container, authStyles)}>
+    <SafeAreaView style={authStyles.container}>
       <Image
         source={logo}
         style={[authStyles.logo, { height: height * 0.3 }]}
@@ -50,16 +47,7 @@ export default function Auth() {
         secureTextEntry={true}
       />
 
-      <IButton title={'Log in'} onPress={submitHandler} />
+      <IButton onPress={submitHandler} />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'yellow',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

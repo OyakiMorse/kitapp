@@ -1,4 +1,3 @@
-import { createStore } from 'redux';
 import {
   SET_USER_USERNAME,
   SET_USER_PASSWORD,
@@ -8,7 +7,7 @@ import {
 const initState = {
   username: null,
   password: null,
-  bill: 0,
+  bill: +null,
 };
 
 function userReducer(state = initState, action) {

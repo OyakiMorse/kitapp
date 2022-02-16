@@ -1,5 +1,4 @@
-import React from 'react';
-import { TextInput } from 'react-native-web';
+import { TextInput } from 'react-native';
 import { inputStyles } from '../styles/inputStyles';
 
 const Field = (props) => {
